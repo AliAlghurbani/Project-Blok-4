@@ -26,7 +26,7 @@
                 <ul class="ulnav">
                     <li class="linav"> <a href="#"> Explore </a></li>
                     <li class="linav"> <a href="#"> Apps </a></li>
-                    <li class="linav"><a href="#"> More </a></li>
+                    <li class="linav"><a href="#"> Addresses</a></li>
                     <li class="linav"><a href="#"> Contact </a></li>
                 </ul>
             </nav>

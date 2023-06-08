@@ -122,6 +122,94 @@ a:hover {
     color: #d7d7d7;
 }
 
+/*registeration */
+
+.regislink {
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s linear;
+}
+
+.regislink:hover {
+    color: rgb(227, 193, 0);
+}
+
+.regismain {
+    width: 100%;
+    padding: 100px;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.regiscontainer {
+    width: 80%;
+    margin: 2% 0 8% 0;
+    border-radius: 20px;
+}
+
+.regisform {
+    background-color: #283d54;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: auto;
+    margin-right: auto;
+}
+
+.inloggensul {
+    list-style: none;
+    margin: 5px;
+}
+
+
+.regisul {
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.regisli {
+    margin: 10px;
+}
+
+input {
+    appearance: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 6px;
+    font-size: 1.1em;
+}
+
+label {
+    font-size: 0.6em;
+    color: white;
+    padding-left: 16px;
+    text-transform: uppercase;
+}
+
+input:focus {
+    background-color: white;
+    color: black;
+}
+
+button {
+    appearance: none;
+    border: 1px solid transparent;
+    padding: 10px 16px;
+    border-radius: 20px;
+    margin-top: 4vh;
+    background-color: #949494;
+}
+
+button:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
 /*footer*/
 
 footer {
