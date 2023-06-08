@@ -21,16 +21,24 @@
                     <input type="text" id="txtLastname" name="txtLastname" placeholder="Lastname">
                 </li>
                 <li class="regisli">
-                    <label for="txtPostcode">Postcode</label><br>
-                    <input type="text" id="txtPostcode" name="txtPostcode" placeholder="Postcode">
-                </li>
-                <li class="regisli">
                     <label for="txtEmail">Email</label><br>
                     <input type="text" id="txtEmail" name="txtEmail" placeholder="Email" autofocus>
                 </li>
                 <li class="regisli">
                     <label for="txtPassword">Password</label><br>
                     <input type="text" id="txtPassword" name="txtPassword" placeholder="Password">
+                </li>
+                <li class="regisli">
+                    <label for="txtGeslacht"> Geslacht </label><br>
+                    <input type="text" id="txtGeslacht" name="txtGeslacht" placeholder="geslacht">
+                </li>
+                <li class="regisli">
+                    <label for="txtGeslacht"> Geslacht </label><br>
+                    <select id="txtGeslacht" name="txtGeslacht">
+                        <option value="manager">Manager</option>
+                        <option value="regular">Regular</option>
+                        <option value="admin">Admin</option>
+                    </select>
                 </li>
                 <li class="regisli">
                     <button type="submit"> RIGESTER </button>

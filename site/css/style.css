@@ -74,7 +74,7 @@ nav {
     justify-content: space-around;
 }
 
-.regisBtn {
+.signInBtn {
     display: inline-block;
     background-color: #283d54;
     color: white;
@@ -87,28 +87,12 @@ nav {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-.regisBtn:hover {
+.signInBtn:hover {
     color: #dcdcdc;
     transition: 0.2s ease-out, color 0.2s ease-out;
 }
 
-.signInBtn {
-    display: inline-block;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    margin: 17px;
-    padding: 15px 24px;
-    border-radius: 20px;
-}
 
-.signInBtn:hover {
-    color: white;
-    border-radius: 20px;
-    background-color: #949494;
-    transition: 0.2s ease-out, color 0.2s ease-out;
-}
 
 /*links styling*/
 

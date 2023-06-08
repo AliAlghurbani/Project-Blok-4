@@ -27,7 +27,7 @@
                     <li class="linav"> <a href="#"> Explore </a></li>
                     <li class="linav"> <a href="#"> Apps </a></li>
                     <li class="linav"><a href="#"> Addresses</a></li>
-                    <li class="linav"><a href="#"> Contact </a></li>
+                    <li class="linav"><a href="regis.php"> Add user </a></li>
                 </ul>
             </nav>
 
