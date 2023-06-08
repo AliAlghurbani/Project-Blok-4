@@ -1,12 +1,24 @@
 * {
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Space Mono', monospace;
+}
+
+/*homepage*/
+
+.homepageMain {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 /*header*/
 header {
     background-color: #4338CA;
     height: 12vh;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -24,7 +36,7 @@ header {
 }
 
 .logoImg {
-    height: 13vh;
+    max-height: 100%;
     width: auto;
 }
 
@@ -32,13 +44,14 @@ header {
 nav {
     background-color: #4338CA;
     height: 12vh;
+    width: auto;
     align-items: center;
     font-size: 18px;
 }
 
 .ulnav {
     list-style-type: none;
-    margin: 3vh 45vh;
+    margin: 3vh 17vw;
     padding: 0;
     display: flex;
     justify-content: space-around;
@@ -55,24 +68,45 @@ nav {
 /*login in the header */
 .loginHeader {
     background-color: #4338CA;
-    height: 10vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.inloggenButton {
+.regisBtn {
     display: inline-block;
     background-color: #283d54;
     color: white;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
-    margin: 25px;
-    padding: 12px 24px;
+    margin: 17px;
+    padding: 15px 24px;
     border-radius: 20px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-.inloggenButton:hover {
+.regisBtn:hover {
     color: #dcdcdc;
+    transition: 0.2s ease-out, color 0.2s ease-out;
+}
+
+.signInBtn {
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin: 17px;
+    padding: 15px 24px;
+    border-radius: 20px;
+}
+
+.signInBtn:hover {
+    color: white;
+    border-radius: 20px;
+    background-color: #949494;
     transition: 0.2s ease-out, color 0.2s ease-out;
 }
 
@@ -141,7 +175,7 @@ footer {
 }
 
 .footerdetails h1 {
-    font-size: 22px;
+    font-size: 18px;
     margin: 0.5em;
 
 }
@@ -151,7 +185,7 @@ footer {
     background-color: #4338CA;
     height: auto;
     width: auto;
-    margin: 20px 0;
+    margin: 3vh 22vw;
     font-size: 22px;
     display: flex;
     flex-direction: row;
@@ -159,6 +193,6 @@ footer {
 }
 
 .lisocials {
-    margin: 0.5em;
+
     padding: 0.2em;
 }
