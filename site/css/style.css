@@ -160,11 +160,26 @@ a:hover {
 }
 
 input {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 6px;
+    font-size: 1.1em;
+}
+
+input[type='radio'] {
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+}
+
+.menuRole {
     appearance: none;
     padding: 10px 16px;
     border-radius: 10px;
     border: none;
     margin-top: 6px;
+    margin-right: 9.3vw;
     font-size: 1.1em;
 }
 
