@@ -9,7 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+session_start();
+
 $rol = $_POST['role'];
+$_SESSION['role'] = $_POST['role'];
 
 $gebruikersnaam = $_POST['txtUsername'];
 
