@@ -9,11 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+$rol = $_POST['role'];
+
 $gebruikersnaam = $_POST['txtUsername'];
-
-$email = $_POST['txtEmail'];
-
-$password = $_POST['txtPassword'];
 
 $voornaam = $_POST['txtFirstname'];
 
@@ -21,9 +19,9 @@ $tussenvoegsels = $_POST['txtPrefixes'];
 
 $achternaam = $_POST['txtLastname'];
 
-$geslacht = $_POST['geslacht'];
+$email = $_POST['txtEmail'];
 
-$rol = $_POST['role'];
+$password = $_POST['txtPassword'];
 
 $straat = $_POST["txtStraat"];
 
@@ -41,13 +39,17 @@ $mobielnummer = $_POST["mobielnummer"];
 
 $notitie = $_POST["txtNotitie"];
 
-$indienst = $_POST["indienst"];
-
 $registerdatum = $_POST["register_datum"];
+
+$aantalmensen = $_POST["aantalmensen"];
 
 $afdeling = $_POST["txtAfdeling"];
 
-$aantalmensen = $_POST["aantalmensen"];
+$indienst = $_POST["indienst"];
+
+$geslacht = $_POST['geslacht'];
+
+
 
 $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -67,14 +69,13 @@ if ($rol == "admin") {
 
     mysqli_query($conn, $sql);
 
-    // $sql = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie) 
-    // VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie' )";
+    $sql1 = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
+    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
-    // mysqli_query($conn, $sql);
-    
+    mysqli_query($conn, $sql1);
 } elseif ($rol == "manager") {
 
-    $sql = "INSERT INTO manager (txtAfdeling, aantalmensen) VALUES ('$afdeling','$aantalmensen')";
+    $sql = "INSERT INTO manager (afdeling, aantal_mensen) VALUES ('$afdeling','$aantalmensen')";
 
     mysqli_query($conn, $sql);
 
@@ -85,13 +86,15 @@ if ($rol == "admin") {
 
     mysqli_query($conn, $sql);
 
-    // $sql = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie) 
-    // VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie' )";
+    $sql1 = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
+    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
-    // mysqli_query($conn, $sql);
+    mysqli_query($conn, $sql1);
 } elseif ($rol == "regular") {
 
     $sql = "INSERT INTO regular (register_datum) VALUES ('$registerdatum')";
+
+    var_dump($sql);
 
     mysqli_query($conn, $sql);
 
@@ -100,10 +103,14 @@ if ($rol == "admin") {
     $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, regular_id)
     VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$id')";
 
+    var_dump($sql);
+
     mysqli_query($conn, $sql);
 
-    // $sql = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie) 
-    // VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie' )";
+    $sql1 = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
+    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
-    // mysqli_query($conn, $sql);
+    var_dump($sql);
+
+    mysqli_query($conn, $sql1);
 }

@@ -37,8 +37,8 @@
                     <input type="text" id="txtNotitie" name="txtNotitie" placeholder="Notitie">
                 </li>
                 <li class="regisli">
-                    <label for="txtDate"> Date  </label><br>
-                    <input type="text" id="txtDate" name="txtDate" placeholder="Date">
+                    <label for="register_datum"> Register date </label><br>
+                    <input type="text" id="register_datum" name="register_datum" placeholder="YYYY-MM-DD">
                 </li>
                 <li class="regisli">
                     <button type="submit"> ADD ADDRESS </button>

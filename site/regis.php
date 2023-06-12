@@ -65,12 +65,12 @@
                     <input type="text" id="mobielnummer" name="mobielnummer" placeholder="Mobile number">
                 </li>
                 <li class="regisli">
-                    <label for="txtNotitie"> Notitie </label><br>
-                    <input type="text" id="txtNotitie" name="txtNotitie" placeholder="Notitie">
+                    <label for="txtNotitie"> Note </label><br>
+                    <input type="text" id="txtNotitie" name="txtNotitie" placeholder="Note">
                 </li>
                 <li class="regisli">
                     <label for="register_datum"> Register date </label><br>
-                    <input type="text" id="register_datum" name="register_datum" placeholder="Register date">
+                    <input type="text" id="register_datum" name="register_datum" placeholder="YYYY-MM-DD">
                 </li>
                 <li class=" regisli">
                     <label for="aantalmensen"> Aantal mensen </label><br>
