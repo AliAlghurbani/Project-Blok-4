@@ -225,7 +225,7 @@ button:hover {
 .dashheader {
     text-align: center;
     vertical-align: middle;
-    color: white;
+    color: #283d54;
     margin: auto;
     font-size: 50px;
 }
@@ -233,7 +233,7 @@ button:hover {
 /*dashboard*/
 
 .dashbody {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.342), rgba(0, 0, 0, 0.342)), url(hompage.jpg);
+    background-image: url(../images/background.jpg);
     background-position: center;
     background-size: cover;
     height: 41em;
@@ -246,7 +246,7 @@ button:hover {
 
 .dashButton {
     display: inline-block;
-    background-color: rgb(227, 193, 0);
+    background-color: #283d54;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -259,10 +259,29 @@ button:hover {
 }
 
 .dashButton:hover {
-    background-color: #283d54;
+    background-color: #949494;
     color: white;
     transition: background-color 0.2s ease-out, color 0.2s ease-out;
 }
+
+/*added user */
+
+.addusersH {
+    display: flex;
+    flex-direction: row;
+}
+
+.adduserPic {
+    width: 15vw;
+    height: auto;
+}
+
+.addusersTitle {
+    color: #283d54;
+    font-size: 35px;
+    margin-top: 45px;
+}
+
 /*footer*/
 
 footer {

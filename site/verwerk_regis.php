@@ -76,6 +76,9 @@ if ($rol == "admin") {
     VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
     mysqli_query($conn, $sql1);
+
+    header("location: inloggen.php");
+    exit;
 } elseif ($rol == "manager") {
 
     $sql = "INSERT INTO manager (afdeling, aantal_mensen) VALUES ('$afdeling','$aantalmensen')";
@@ -93,11 +96,12 @@ if ($rol == "admin") {
     VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
     mysqli_query($conn, $sql1);
+
+    header("location: inloggen.php");
+    exit;
 } elseif ($rol == "regular") {
 
     $sql = "INSERT INTO regular (register_datum) VALUES ('$registerdatum')";
-
-    var_dump($sql);
 
     mysqli_query($conn, $sql);
 
@@ -106,14 +110,13 @@ if ($rol == "admin") {
     $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, regular_id)
     VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$id')";
 
-    var_dump($sql);
-
     mysqli_query($conn, $sql);
 
     $sql1 = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
     VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
-    var_dump($sql);
-
     mysqli_query($conn, $sql1);
+
+    header("location: inloggen.php");
+    exit;
 }
