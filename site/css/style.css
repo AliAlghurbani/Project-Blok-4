@@ -246,6 +246,7 @@ button:hover {
 
 .dashButton {
     display: inline-block;
+    align-items: center;
     background-color: #283d54;
     color: white;
     font-size: 18px;
