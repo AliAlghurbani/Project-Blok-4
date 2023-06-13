@@ -1,4 +1,16 @@
 <?php
+
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header($_SERVER["SERVER_PROTOCOL"] . " 405 Method Not Allowed", true, 405);
+    include '405.php';
+    exit;
+}
+
+?>
+
+
+<?php
 include 'header.php';
 ?>
 
@@ -8,7 +20,7 @@ include 'header.php';
         <img class="adduserPic" src="images/check1.gif" alt="img">
         <h1 class="addusersTitle"> USER ADDED </h1>
     </div>
-    <a href="index.php" class="dashButton"> HOME PAGE </a>
+    <a href="homepage.php" class="dashButton"> HOME PAGE </a>
     <a href="regis.php" class="dashButton"> ADD ANOTHER USER </a>
 </div>
 </body>

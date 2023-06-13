@@ -2,15 +2,10 @@
 
     <ul class="ulfooter">
         <li class="lifooter"> <a href="#"> ABOUT </a></li>
-        <li> | </li>
         <li class="lifooter"> <a href="#"> CODE </a></li>
-        <li> | </li>
         <li class="lifooter"> <a href="#"> CONTACT </a></li>
-        <li> | </li>
         <li class="lifooter"> <a href="#"> PRIVACY </a></li>
-        <li> | </li>
         <li class="lifooter"> <a href="#"> SETUP </a></li>
-        <li> | </li>
         <li class="lifooter"> <a href="#"> SITEMAP </a></li>
     </ul>
 

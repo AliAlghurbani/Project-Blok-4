@@ -1,8 +1,3 @@
-<?php
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +11,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title> Locasion </title>
 </head>
 
@@ -25,45 +21,17 @@ session_start();
         <header>
 
             <div class="logo">
-                <img src="images/Logo1-removebg-preview.png" alt="LOGO" class="logoImg">
+                <a href="homepage.php"><img src="images/Logo1-removebg-preview.png" alt="LOGO" class="logoImg"></a>
             </div>
             <nav>
 
-                <?php
+                <ul class="ulnav">
+                    <li class="linav"> <a href="#"> Explore </a></li>
+                    <li class="linav"> <a href="#"> Apps </a></li>
+                    <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                    <li class="linav"><a href="#"> Contact </a></li>
+                </ul>
 
-                if (isset($_SESSION['isIngelogd'])) {
-                    $_SESSION['role'] = $user['role'];
-
-                    if ($_SESSION['role'] == 'administrator') {
-                ?>
-                        <ul class="ulnav">
-                            <li class="linav"> <a href="#"> Stats </a></li>
-                            <li class="linav"> <a href="#"> Add Adresses </a></li>
-                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                            <li class="linav"><a href="#"> Add Users </a></li>
-                            <li class="linav"><a href="#"> Users </a></li>
-                        </ul>
-                    <?php
-                    } else if ($_SESSION['role'] == 'manager') {
-                    ?>
-                        <ul class="ulnav">
-                            <li class="linav"> <a href="#"> Stats </a></li>
-                            <li class="linav"> <a href="#"> Add Adresses </a></li>
-                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                        </ul>
-                    <?php
-                    } else {
-                    ?>
-                        <ul class="ulnav">
-                            <li class="linav"> <a href="#"> Explore </a></li>
-                            <li class="linav"> <a href="#"> Apps </a></li>
-                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                            <li class="linav"><a href="#"> Contact </a></li>
-                        </ul>
-                <?php
-                    }
-                }
-                ?>
             </nav>
 
             <div class="loginHeader">
