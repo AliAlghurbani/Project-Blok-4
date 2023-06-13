@@ -2,7 +2,7 @@
 
 <main class="regismain">
     <div class="regiscontainer">
-        <form class="regisform" method="post" action="verwerk_regis.php">
+        <form class="regisform" method="post" action="verwerk_addressen.php">
             <ul class="regisul">
                 <li class="regisli">
                     <label for="txtStraat"> Street </label><br>

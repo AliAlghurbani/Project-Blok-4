@@ -23,16 +23,49 @@
                 <img src="images/Logo1-removebg-preview.png" alt="LOGO" class="logoImg">
             </div>
             <nav>
-                <ul class="ulnav">
-                    <li class="linav"> <a href="#"> Explore </a></li>
-                    <li class="linav"> <a href="#"> Apps </a></li>
-                    <li class="linav"><a href="#"> Addresses</a></li>
-                    <li class="linav"><a href="#"> Contact </a></li>
-                </ul>
+
+                <?php
+                
+                session_start();
+
+                if (isset($_SESSION['isIngelogd'])) {
+                    $_SESSION['role'] = $user['role'];
+
+                    if ($_SESSION['role'] == 'admin') {
+                ?>
+                        <ul class="ulnav">
+                            <li class="linav"> <a href="#"> Stats </a></li>
+                            <li class="linav"> <a href="#"> Add Adresses </a></li>
+                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                            <li class="linav"><a href="#"> Add Users </a></li>
+                            <li class="linav"><a href="#"> Users </a></li>
+                        </ul>
+                    <?php
+                    } else if ($_SESSION['role'] == 'manager') {
+                    ?>
+                        <ul class="ulnav">
+                            <li class="linav"> <a href="#"> Stats </a></li>
+                            <li class="linav"> <a href="#"> Add Adresses </a></li>
+                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                        </ul>
+                    <?php
+                    } else {
+                    ?>
+                        <ul class="ulnav">
+                            <li class="linav"> <a href="#"> Explore </a></li>
+                            <li class="linav"> <a href="#"> Apps </a></li>
+                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                            <li class="linav"><a href="#"> Contact </a></li>
+                        </ul>
+                <?php
+                    }
+                }
+                ?>
             </nav>
 
             <div class="loginHeader">
-                <a href="#" class="signInBtn"> Sign in </a>
+                <a href="inloggen.php" class="signInBtn"> Sign in </a>
             </div>
+
         </header>
     </div>

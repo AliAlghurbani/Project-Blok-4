@@ -63,60 +63,83 @@ if ($rol == "admin") {
 
     $sql = "INSERT INTO administrator (in_dienst) VALUES ('$indienst')";
 
-    mysqli_query($conn, $sql);
-
-    $id = mysqli_insert_id($conn);
-
-    $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, admin_id)
-    VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$id')";
 
     mysqli_query($conn, $sql);
 
-    $sql1 = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
-    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
-    mysqli_query($conn, $sql1);
 
-    header("location: inloggen.php");
+    $admin_id = mysqli_insert_id($conn);
+
+    $sql = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
+    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum')";
+
+
+    mysqli_query($conn, $sql);
+
+
+    $address_id = mysqli_insert_id($conn);
+
+    $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, admin_id, address_id)
+    VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$admin_id', $address_id)";
+
+
+    mysqli_query($conn, $sql);
+
+
+    header("location: user_added.php");
     exit;
 } elseif ($rol == "manager") {
 
     $sql = "INSERT INTO manager (afdeling, aantal_mensen) VALUES ('$afdeling','$aantalmensen')";
 
-    mysqli_query($conn, $sql);
-
-    $id = mysqli_insert_id($conn);
-
-    $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, manager_id)
-    VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$id')";
 
     mysqli_query($conn, $sql);
 
-    $sql1 = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
-    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
-    mysqli_query($conn, $sql1);
+    $manager_id = mysqli_insert_id($conn);
 
-    header("location: inloggen.php");
+    $sql = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
+    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum')";
+
+
+    mysqli_query($conn, $sql);
+
+
+    $address_id = mysqli_insert_id($conn);
+
+    $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, manager_id, address_id)
+    VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$manager_id', $address_id)";
+
+
+    mysqli_query($conn, $sql);
+
+
+    header("location: user_added.php");
     exit;
 } elseif ($rol == "regular") {
 
     $sql = "INSERT INTO regular (register_datum) VALUES ('$registerdatum')";
 
-    mysqli_query($conn, $sql);
-
-    $id = mysqli_insert_id($conn);
-
-    $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, regular_id)
-    VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$id')";
 
     mysqli_query($conn, $sql);
 
-    $sql1 = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
-    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum' )";
 
-    mysqli_query($conn, $sql1);
+    $regular_id = mysqli_insert_id($conn);
 
-    header("location: inloggen.php");
+    $sql = "INSERT INTO address (straat, huisnummer, postcode, plaats, land, telefoonnummer, mobielnummer, notitie, toevoegdatum) 
+    VALUES ('$straat','$huisnummer','$postcode','$plaats','$land','$telefoonnummer','$mobielnummer', '$notitie', '$registerdatum')";
+
+
+    mysqli_query($conn, $sql);
+
+
+    $address_id = mysqli_insert_id($conn);
+
+    $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, regular_id, address_id)
+    VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$regular_id', $address_id)";
+ 
+    mysqli_query($conn, $sql);
+
+    header("location: user_added.php");
     exit;
 }
