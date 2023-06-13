@@ -1,4 +1,4 @@
-    <?php require 'adminheader.php'; ?>
+    <?php require 'header.php'; ?>
 
     <main class="homepageMain">
 

@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,13 +30,11 @@
             <nav>
 
                 <?php
-                
-                session_start();
 
                 if (isset($_SESSION['isIngelogd'])) {
                     $_SESSION['role'] = $user['role'];
 
-                    if ($_SESSION['role'] == 'admin') {
+                    if ($_SESSION['role'] == 'administrator') {
                 ?>
                         <ul class="ulnav">
                             <li class="linav"> <a href="#"> Stats </a></li>
