@@ -153,17 +153,6 @@ a:hover {
 
 /*registeration / logging in */
 
-.regislink {
-    font-size: 12px;
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s linear;
-}
-
-.regislink:hover {
-    color: rgb(227, 193, 0);
-}
-
 .regismain {
     width: 100%;
     padding: 100px;
@@ -204,27 +193,14 @@ a:hover {
     margin: 10px;
 }
 
-input {
+.dropdownMenu {
     padding: 10px 16px;
     border-radius: 10px;
     border: none;
     margin-top: 6px;
     font-size: 1.1em;
-}
-
-input[type='radio'] {
-    size: 100px;
-    vertical-align: middle;
-}
-
-.menuRole {
-    appearance: none;
-    padding: 10px 16px;
-    border-radius: 10px;
-    border: none;
-    margin-top: 6px;
-    margin-right: 9.3vw;
-    font-size: 1.1em;
+    width: 16vw;
+    height: 7vh;
 }
 
 label {
@@ -234,12 +210,32 @@ label {
     text-transform: uppercase;
 }
 
-input:focus {
+.txtInput {
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 6px;
+    font-size: 1.1em;
+    text-transform: lowercase;
+}
+
+.txtInput:focus {
     background-color: white;
     color: black;
 }
 
-button {
+.lblRadio {
+    font-size: 1em;
+    margin: 0.3em;
+}
+
+.btnRadio {
+    height: 15px;
+    width: 15px;
+    margin: 0.3em;
+}
+
+.Btn {
     appearance: none;
     border: 1px solid transparent;
     padding: 10px 16px;
@@ -248,7 +244,7 @@ button {
     background-color: #949494;
 }
 
-button:hover {
+.Btn:hover {
     border: 1px solid black;
     cursor: pointer;
 }
