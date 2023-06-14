@@ -9,14 +9,14 @@
                 <?php } ?>
                 <li class="regisli">
                     <label for="txtEmail">Email</label><br>
-                    <input type="text" id="txtEmail" name="email" placeholder="Email" autofocus>
+                    <input class="txtInput" type="text" id="txtEmail" name="email" placeholder="Email" autofocus>
                 </li>
                 <li class="regisli">
                     <label for="txtPassword">Password</label><br>
-                    <input type="text" id="txtPassword" name="password" placeholder="Password">
+                    <input class="txtInput" type="text" id="txtPassword" name="password" placeholder="Password">
                 </li>
                 <li class="regisli">
-                    <button type="submit"> SIGN IN </button>
+                    <button class="Btn" type="submit"> SIGN IN </button>
                 </li>
             </ul>
         </form>
