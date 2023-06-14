@@ -1,20 +1,31 @@
 <?php
 
-$zoekterm = $_POST['zoekveld'];
-
-if (empty($zoekterm)) {
-    header("location: addresses-overzicht.php");
-    exit;
-}
-
 require 'database.php';
 
-$sql = "SELECT * FROM address WHERE address_id LIKE '%$zoekterm%' OR straat LIKE '%$zoekterm%' OR huisnummer LIKE '%$zoekterm%' 
-OR postcode LIKE '%$zoekterm%' OR plaats LIKE '%$zoekterm%' OR land LIKE '%$zoekterm%' OR telefoonnummer LIKE '%$zoekterm%' 
-OR mobielnummer LIKE '%$zoekterm%' OR notitie LIKE '%$zoekterm%' OR toevoegdatum LIKE '%$zoekterm%' ";
 
-$result = mysqli_query($conn, $sql);
-$all_addresses = mysqli_fetch_all($result,  MYSQLI_ASSOC);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $filterOption = $_POST['filter_option'];
+    if ($filterOption == "A-Z") {
+        $sql = "SELECT * FROM address ORDER BY straat";
+    } else if ($filterOption == "Z-A") {
+        $sql = "SELECT * FROM address ORDER BY straat DESC";
+    } else if ($filterOption == "1-999") {
+        $sql = "SELECT * FROM address ORDER BY address_id";
+    } else if ($filterOption == "999-1") {
+        $sql = "SELECT * FROM address ORDER BY address_id DESC";
+    } else if ($filterOption == "Streets") {
+        $sql = "SELECT * FROM address ORDER BY straat";
+    } else if ($filterOption == "Post_codes") {
+        $sql = "SELECT * FROM address ORDER BY postcode";
+    } else if ($filterOption == "Places") {
+        $sql = "SELECT * FROM address ORDER BY plaats";
+    } else if ($filterOption == "Countries") {
+        $sql = "SELECT * FROM address ORDER BY land";
+    }
+
+    $result = mysqli_query($conn, $sql);
+    $all_addresses = mysqli_fetch_all($result,  MYSQLI_ASSOC);
+}
 
 ?>
 
@@ -33,7 +44,7 @@ include 'header.php';
                 <option value="1-999"> 1-999 </option>
                 <option value="999-1"> 999-1 </option>
                 <option value="Streets"> Streets </option>
-                <option value="Post codes"> Post codes </option>
+                <option value="Post_codes"> Post codes </option>
                 <option value="Places"> Places </option>
                 <option value="Countries"> Countries </option>
                 <button class="Btn" type="submit"><span class="material-symbols-outlined">sort</span></button>

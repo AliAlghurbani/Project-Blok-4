@@ -25,17 +25,18 @@ include 'header.php';
 
 
     <div class="filterandsearch">
-        <label for="filter"> Filter </label><br>
-        <select id="filter" name="filter" class="dropdownMenu" style="margin-top: 4.5vh;">
-            <option value="manager"> A-Z </option>
-            <option value="regular"> Z-A </option>
-            <option value="admin"> 1-999 </option>
-            <option value="admin"> 999-1 </option>
-            <option value="admin"> Streets </option>
-            <option value="admin"> Post codes </option>
-            <option value="admin"> Places </option>
-            <option value="admin"> Countries </option>
-        </select>
+        <form action="specials.php" method="post" class="filter">
+            <select id="filter" name="filter" class="dropdownMenu" style="margin-top: 4.5vh;">
+                <option value="manager"> A-Z </option>
+                <option value="regular"> Z-A </option>
+                <option value="admin"> 1-999 </option>
+                <option value="admin"> 999-1 </option>
+                <option value="admin"> Streets </option>
+                <option value="admin"> Post codes </option>
+                <option value="admin"> Places </option>
+                <option value="admin"> Countries </option>
+            </select>
+        </form>
 
         <form action="verwerk-zoek-user.php" method="post">
             <input class="txtInput" type="text" name="zoekveld" placeholder="Type the user here">

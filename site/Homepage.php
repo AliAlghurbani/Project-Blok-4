@@ -4,7 +4,7 @@
 
         <h1> WHERE AM I?</h1>
         <h2> Find and browse through your addresses</h2>
-        <a href="#" class="homepageBtn">
+        <a href="addresses-overzicht.php" class="homepageBtn">
             <div><span class="material-symbols-outlined">map</span></div>
             <div>Show addresses</div>
         </a>

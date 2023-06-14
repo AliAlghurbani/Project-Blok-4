@@ -5,7 +5,7 @@ require 'database.php';
 
 $sql = "SELECT * FROM address";
 $result = mysqli_query($conn, $sql);
-$all_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$all_addresses = mysqli_fetch_all($result,  MYSQLI_ASSOC);
 
 
 
@@ -20,17 +20,19 @@ require 'header.php';
 <body class="users-overzichtBody">
 
     <div class="filterandsearch">
-        <label for="filter"> Filter </label><br>
-        <select id="filter" name="filter" class="dropdownMenu" style="margin-top: 4.5vh;">
-            <option value="manager"> A-Z </option>
-            <option value="regular"> Z-A </option>
-            <option value="admin"> 1-999 </option>
-            <option value="admin"> 999-1 </option>
-            <option value="admin"> Streets </option>
-            <option value="admin"> Post codes </option>
-            <option value="admin"> Places </option>
-            <option value="admin"> Countries </option>
-        </select>
+        <form action="verwerk-filter.php" method="post" class="filter">
+            <select id="filter_option" name="filter_option" class="dropdownMenu" style="margin-top: 4.5vh;">
+                <option value="A-Z"> A-Z </option>
+                <option value="Z-A"> Z-A </option>
+                <option value="1-999"> 1-999 </option>
+                <option value="999-1"> 999-1 </option>
+                <option value="Streets"> Streets </option>
+                <option value="Post codes"> Post codes </option>
+                <option value="Places"> Places </option>
+                <option value="Countries"> Countries </option>
+            </select>
+            <button class="Btn" type="submit"><span class="material-symbols-outlined">sort</span></button>
+        </form>
 
         <form action="verwerk-zoek-adress.php" method="post">
             <input class="txtInput" type="text" name="zoekveld" placeholder="Type the address here">
@@ -57,18 +59,18 @@ require 'header.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($all_users as $user) : ?>
+                    <?php foreach ($all_addresses as $address) : ?>
                         <tr>
-                            <td><?php echo $user['address_id'] ?></td>
-                            <td><?php echo $user['straat'] ?></td>
-                            <td><?php echo $user['huisnummer'] ?></td>
-                            <td><?php echo $user['postcode'] ?></td>
-                            <td><?php echo $user['plaats'] ?></td>
-                            <td><?php echo $user['land'] ?></td>
-                            <td><?php echo $user['telefoonnummer'] ?></td>
-                            <td><?php echo $user['mobielnummer'] ?></td>
-                            <td><?php echo $user['notitie'] ?></td>
-                            <td><?php echo $user['toevoegdatum'] ?></td>
+                            <td><?php echo $address['address_id'] ?></td>
+                            <td><?php echo $address['straat'] ?></td>
+                            <td><?php echo $address['huisnummer'] ?></td>
+                            <td><?php echo $address['postcode'] ?></td>
+                            <td><?php echo $address['plaats'] ?></td>
+                            <td><?php echo $address['land'] ?></td>
+                            <td><?php echo $address['telefoonnummer'] ?></td>
+                            <td><?php echo $address['mobielnummer'] ?></td>
+                            <td><?php echo $address['notitie'] ?></td>
+                            <td><?php echo $address['toevoegdatum'] ?></td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
