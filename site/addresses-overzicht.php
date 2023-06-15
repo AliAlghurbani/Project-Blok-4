@@ -20,7 +20,7 @@ require 'header.php';
 <body class="users-overzichtBody">
 
     <div class="filterandsearch">
-        <form action="verwerk-filter.php" method="post" class="filter">
+        <form action="verwerk-filter-address.php" method="post" class="filter">
             <select id="filter_option" name="filter_option" class="dropdownMenu" style="margin-top: 4.5vh;">
                 <option value="A-Z"> A-Z </option>
                 <option value="Z-A"> Z-A </option>
@@ -34,7 +34,7 @@ require 'header.php';
             <button class="Btn" type="submit"><span class="material-symbols-outlined">sort</span></button>
         </form>
 
-        <form action="verwerk-zoek-adress.php" method="post">
+        <form action="verwerk-zoek-address.php" method="post">
             <input class="txtInput" type="text" name="zoekveld" placeholder="Type the address here">
             <button class="Btn" type="submit"><span class="material-symbols-outlined">travel_explore</span></button>
         </form>

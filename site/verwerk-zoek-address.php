@@ -26,7 +26,7 @@ include 'header.php';
 
     <div class="filterandsearch">
 
-        <form action="verwerk-filter.php" method="post" class="filter">
+        <form action="verwerk-filter-address.php" method="post" class="filter">
             <select id="filter_option" name="filter_option" class="dropdownMenu" style="margin-top: 4.5vh;">
                 <option value="A-Z"> A-Z </option>
                 <option value="Z-A"> Z-A </option>
@@ -36,11 +36,11 @@ include 'header.php';
                 <option value="Post codes"> Post codes </option>
                 <option value="Places"> Places </option>
                 <option value="Countries"> Countries </option>
-                <button class="Btn" type="submit"><span class="material-symbols-outlined">sort</span></button>
             </select>
+            <button class="Btn" type="submit"><span class="material-symbols-outlined">sort</span></button>
         </form>
 
-        <form action="verwerk-zoek-adress.php" method="post">
+        <form action="verwerk-zoek-address.php" method="post">
             <input class="txtInput" type="text" name="zoekveld" placeholder="Type the address here">
             <button class="Btn" type="submit"><span class="material-symbols-outlined">travel_explore</span></button>
         </form>
