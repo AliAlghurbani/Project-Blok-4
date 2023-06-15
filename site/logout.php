@@ -5,5 +5,5 @@ session_start();
 unset($_SESSION);
 session_destroy();
 
-header("location: inloggen.php");
+header("location: homepage.php");
 exit;

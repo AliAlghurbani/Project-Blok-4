@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -36,11 +34,11 @@ session_start();
             <nav>
 
                 <?php
-
                 if (isset($_SESSION['isIngelogd'])) {
-                    $_SESSION['role'] = $user['role'];
+                    $user['role'] = $_SESSION['role'];
+                    if ($user['role'] == 'administrator') {
+                        die('dasdasdasdasdf');
 
-                    if ($_SESSION['role'] == 'administrator') {
                 ?>
                         <ul class="ulnav">
                             <li class="linav"> <a href="#"> Stats </a></li>
@@ -50,7 +48,7 @@ session_start();
                             <li class="linav"><a href="#"> Users </a></li>
                         </ul>
                     <?php
-                    } else if ($_SESSION['role'] == 'manager') {
+                    } else if ($user['role'] == 'manager') {
                     ?>
                         <ul class="ulnav">
                             <li class="linav"> <a href="#"> Stats </a></li>

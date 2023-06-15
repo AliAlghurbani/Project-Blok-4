@@ -1,4 +1,8 @@
 <?php
+include 'header.php';
+?>
+
+<?php
 
 
 session_start();
@@ -8,10 +12,6 @@ if (!isset($_SESSION['isIngelogd'])) {
     exit;
 }
 
-?>
-
-<?php
-include 'header.php';
 ?>
 
 

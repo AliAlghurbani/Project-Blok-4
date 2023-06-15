@@ -1,37 +1,23 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-require 'database.php';
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $filterOption = $_POST['filter_option'];
-    if ($filterOption == "A-Z") {
-        $sql = "SELECT * FROM address ORDER BY straat";
-    } else if ($filterOption == "Z-A") {
-        $sql = "SELECT * FROM address ORDER BY straat DESC";
-    } else if ($filterOption == "1-999") {
-        $sql = "SELECT * FROM address ORDER BY address_id";
-    } else if ($filterOption == "999-1") {
-        $sql = "SELECT * FROM address ORDER BY address_id DESC";
-    } else if ($filterOption == "Streets") {
-        $sql = "SELECT * FROM address ORDER BY straat";
-    } else if ($filterOption == "Post_codes") {
-        $sql = "SELECT * FROM address ORDER BY postcode";
-    } else if ($filterOption == "Places") {
-        $sql = "SELECT * FROM address ORDER BY plaats";
-    } else if ($filterOption == "Countries") {
-        $sql = "SELECT * FROM address ORDER BY land";
-    }
-
-    $result = mysqli_query($conn, $sql);
-    $all_addresses = mysqli_fetch_all($result,  MYSQLI_ASSOC);
-}
-
-?>
-
-<?php
-include 'header.php';
-?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title> Locasion </title>
+</head>
 
 <body class="users-overzichtBody">
 

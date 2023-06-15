@@ -1,5 +1,4 @@
-    <?php require 'header.php'; ?>
-
+    
     <main class="homepageMain">
 
         <h1> WHERE AM I?</h1>

@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/icon.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title> Locasion </title>
 </head>
 
@@ -20,55 +25,33 @@
         <header>
 
             <div class="logo">
-                <img src="images/Logo1-removebg-preview.png" alt="LOGO" class="logoImg">
+                <a href="homepage.php"><img src="images/Logo1-removebg-preview.png" alt="LOGO" class="logoImg"></a>
             </div>
             <nav>
-                <ul class="ulnav">
-                    <li class="linav"> <a href="#"> Explore </a></li>
-                    <li class="linav"> <a href="#"> Apps </a></li>
-                    <li class="linav"><a href="#"> Addresses</a></li>
-                    <li class="linav"><a href="regis.php"> Add user </a></li>
-                </ul>
-            </nav>
-
-            <?php
-
-                if (isset($_SESSION['isIngelogd'])) {
-                    $_SESSION['role'] = $user['role'];
-
-                    if ($_SESSION['role'] == 'administrator') {
-                ?>
                         <ul class="ulnav">
-                            <li class="linav"> <a href="#"> Stats </a></li>
+
                             <li class="linav"> <a href="#"> Add Adresses </a></li>
                             <li class="linav"><a href="adressen.php"> Addresses</a></li>
                             <li class="linav"><a href="#"> Add Users </a></li>
                             <li class="linav"><a href="#"> Users </a></li>
                         </ul>
-                    <?php
-                    } else if ($_SESSION['role'] == 'manager') {
-                    ?>
-                        <ul class="ulnav">
-                            <li class="linav"> <a href="#"> Stats </a></li>
+            </nav>
+
+            <div class="loginHeader">
+                <a href="inloggen.php" class="signInBtn"> Sign in </a>
+            </div>
+
+        </header>
+    </div>
+
+    <ul class="ulnav">
                             <li class="linav"> <a href="#"> Add Adresses </a></li>
                             <li class="linav"><a href="adressen.php"> Addresses</a></li>
                         </ul>
-                    <?php
-                    } else {
-                    ?>
+                    
                         <ul class="ulnav">
                             <li class="linav"> <a href="#"> Explore </a></li>
                             <li class="linav"> <a href="#"> Apps </a></li>
                             <li class="linav"><a href="adressen.php"> Addresses</a></li>
                             <li class="linav"><a href="#"> Contact </a></li>
                         </ul>
-                <?php
-                    }
-                }
-                ?>
-                
-            <div class="loginHeader">
-                <a href="#" class="signInBtn"> Sign in </a>
-            </div>
-        </header>
-    </div>
