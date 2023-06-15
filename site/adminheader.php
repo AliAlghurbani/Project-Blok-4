@@ -28,13 +28,13 @@
                 <a href="homepage.php"><img src="images/Logo1-removebg-preview.png" alt="LOGO" class="logoImg"></a>
             </div>
             <nav>
-                        <ul class="ulnav">
+                <ul class="ulnav">
 
-                            <li class="linav"> <a href="#"> Add Adresses </a></li>
-                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                            <li class="linav"><a href="#"> Add Users </a></li>
-                            <li class="linav"><a href="#"> Users </a></li>
-                        </ul>
+                    <li class="linav"> <a href="#"> Add Adresses </a></li>
+                    <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                    <li class="linav"><a href="#"> Add Users </a></li>
+                    <li class="linav"><a href="#"> Users </a></li>
+                </ul>
             </nav>
 
             <div class="loginHeader">
@@ -45,13 +45,13 @@
     </div>
 
     <ul class="ulnav">
-                            <li class="linav"> <a href="#"> Add Adresses </a></li>
-                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                        </ul>
-                    
-                        <ul class="ulnav">
-                            <li class="linav"> <a href="#"> Explore </a></li>
-                            <li class="linav"> <a href="#"> Apps </a></li>
-                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                            <li class="linav"><a href="#"> Contact </a></li>
-                        </ul>
+        <li class="linav"> <a href="#"> Add Adresses </a></li>
+        <li class="linav"><a href="adressen.php"> Addresses</a></li>
+    </ul>
+
+    <ul class="ulnav">
+        <li class="linav"> <a href="#"> Explore </a></li>
+        <li class="linav"> <a href="#"> Apps </a></li>
+        <li class="linav"><a href="adressen.php"> Addresses</a></li>
+        <li class="linav"><a href="#"> Contact </a></li>
+    </ul>
