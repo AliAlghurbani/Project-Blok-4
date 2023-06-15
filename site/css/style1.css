@@ -21,7 +21,7 @@ main.table {
     max-height: calc(89% - 1.6rem);
     background-color: #fffb;
     margin: .8rem auto;
-    border-radius: .6rem;
+    border-radius: 0.6rem;
     overflow: auto;
     overflow: overlay;
 }
@@ -132,8 +132,98 @@ thead th.asc {
 /*filter and search */
 .filterandsearch {
     padding: 0 4vw;
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+
+/*stats a table */
+
+.table-container {
+
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 0.6em;
+    margin-top: 3vh;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.stats-table thead {
+    color: white;
+    background-color: #283d54;
+}
+
+.stats-table tbody {
+    color: #283d54;
+    background-color: white;
+}
+
+/* @media screen and (max-width: 600px) {
+    .stats-table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .stats-table thead,
+    .stats-table tbody,
+    .stats-table th,
+    .stats-table td,
+    .stats-table tr {
+        display: block;
+    }
+
+    .stats-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .stats-table tr {
+        border: 1px solid #ccc;
+    }
+
+    .stats-table td {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .stats-table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    .stats-table td:nth-of-type(1):before {
+        content: "Aantal Gebruikers";
+    }
+
+    .stats-table td:nth-of-type(2):before {
+        content: "Admin";
+    }
+
+    .stats-table td:nth-of-type(3):before {
+        content: "Manager";
+    }
+
+    .stats-table td:nth-of-type(4):before {
+        content: "Regular";
+    } 
+}*/

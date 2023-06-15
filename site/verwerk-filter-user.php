@@ -1,19 +1,35 @@
 <?php
 
-$zoekterm = $_POST['zoekveld'];
-
-if (empty($zoekterm)) {
-    header("location: addresses-overzicht.php");
-    exit;
-}
-
 require 'database.php';
 
-$sql = "SELECT * FROM users WHERE id LIKE '%$zoekterm%' OR voornaam LIKE '%$zoekterm%' OR tussenvoegsels LIKE '%$zoekterm%' 
-OR achternaam LIKE '%$zoekterm%' OR gebruikersnaam LIKE '%$zoekterm%' OR geslacht LIKE '%$zoekterm%' ";
 
-$result = mysqli_query($conn, $sql);
-$all_users = mysqli_fetch_all($result,  MYSQLI_ASSOC);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $filterOption = $_POST['filter'];
+    if ($filterOption == "idASC") {
+        $sql = "SELECT * FROM users ORDER BY id";
+    } else if ($filterOption == "idDESC") {
+        $sql = "SELECT * FROM users ORDER BY id DESC";
+    } else if ($filterOption == "firstnameASC") {
+        $sql = "SELECT * FROM users ORDER BY voornaam";
+    } else if ($filterOption == "firstnameDESC") {
+        $sql = "SELECT * FROM users ORDER BY voornaam DESC";
+    } else if ($filterOption == "lastnameASC") {
+        $sql = "SELECT * FROM users ORDER BY achternaam";
+    } else if ($filterOption == "lastnameDESC") {
+        $sql = "SELECT * FROM users ORDER BY achternaam DESC";
+    } else if ($filterOption == "usernameASC") {
+        $sql = "SELECT * FROM users ORDER BY gebruikersnaam";
+    } else if ($filterOption == "usernameDESC") {
+        $sql = "SELECT * FROM users ORDER BY gebruikersnaam DESC";
+    } else if ($filterOption == "emailASC") {
+        $sql = "SELECT * FROM users ORDER BY email";
+    } else if ($filterOption == "emailDESC") {
+        $sql = "SELECT * FROM users ORDER BY email DESC";
+    }
+
+    $result = mysqli_query($conn, $sql);
+    $all_users = mysqli_fetch_all($result,  MYSQLI_ASSOC);
+}
 
 ?>
 
@@ -22,7 +38,6 @@ include 'header.php';
 ?>
 
 <body class="users-overzichtBody">
-
 
     <div class="filterandsearch">
         <form action="verwerk-filter-user.php" method="post" class="filter">
@@ -53,11 +68,12 @@ include 'header.php';
             <table>
                 <thead>
                     <tr>
-                        <th> Id </th>
-                        <th> First Name </th>
+                        <th> User ID </th>
+                        <th> Firstname </th>
                         <th> Prefixes </th>
-                        <th> Last Name </th>
+                        <th> Lastname </th>
                         <th> Username </th>
+                        <th> Email </th>
                         <th> Gender </th>
                     </tr>
                 </thead>
@@ -69,6 +85,7 @@ include 'header.php';
                             <td><?php echo $user['tussenvoegsels'] ?></td>
                             <td><?php echo $user['achternaam'] ?></td>
                             <td><?php echo $user['gebruikersnaam'] ?></td>
+                            <td><?php echo $user['email'] ?></td>
                             <td><?php echo $user['geslacht'] ?></td>
                         </tr>
                     <?php endforeach ?>
@@ -77,8 +94,3 @@ include 'header.php';
         </section>
     </main>
 </body>
-<?php require 'footer.php' ?>
-
-</body>
-
-</html>

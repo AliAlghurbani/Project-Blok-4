@@ -78,7 +78,7 @@
                 </li>
                 <li class="regisli">
                     <label for="txtAfdeling"> Afdeling </label><br>
-                    <input class="txtInput" type="text" id="txtAfdeling" name="txtAfdeling" placeholder="Afdeling number">
+                    <input class="txtInput" type="text" id="txtAfdeling" name="txtAfdeling" placeholder="Afdeling">
                 </li>
                 <li class="regisli">
                     <label for="indienst">Employee</label><br>
