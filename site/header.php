@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,12 +35,41 @@
             </div>
             <nav>
 
-                <ul class="ulnav">
-                    <li class="linav"> <a href="#"> Explore </a></li>
-                    <li class="linav"> <a href="#"> Apps </a></li>
-                    <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                    <li class="linav"><a href="#"> Contact </a></li>
-                </ul>
+                <?php
+
+                if (isset($_SESSION['isIngelogd'])) {
+                    $_SESSION['role'] = $user['role'];
+
+                    if ($_SESSION['role'] == 'administrator') {
+                ?>
+                        <ul class="ulnav">
+                            <li class="linav"> <a href="#"> Stats </a></li>
+                            <li class="linav"> <a href="#"> Add Adresses </a></li>
+                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                            <li class="linav"><a href="#"> Add Users </a></li>
+                            <li class="linav"><a href="#"> Users </a></li>
+                        </ul>
+                    <?php
+                    } else if ($_SESSION['role'] == 'manager') {
+                    ?>
+                        <ul class="ulnav">
+                            <li class="linav"> <a href="#"> Stats </a></li>
+                            <li class="linav"> <a href="#"> Add Adresses </a></li>
+                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                        </ul>
+                    <?php
+                    } else {
+                    ?>
+                        <ul class="ulnav">
+                            <li class="linav"> <a href="#"> Explore </a></li>
+                            <li class="linav"> <a href="#"> Apps </a></li>
+                            <li class="linav"><a href="adressen.php"> Addresses</a></li>
+                            <li class="linav"><a href="#"> Contact </a></li>
+                        </ul>
+                <?php
+                    }
+                }
+                ?>
 
             </nav>
 

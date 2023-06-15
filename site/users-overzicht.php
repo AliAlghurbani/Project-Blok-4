@@ -7,6 +7,13 @@ $sql = "SELECT * FROM users";
 $result = mysqli_query($conn, $sql);
 $all_users = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+$sql = "SELECT DISTINCT COUNT(id) FROM users";
+$result = mysqli_query($conn, $sql);
+$aantal_gebruikers = mysqli_fetch_array($result);
+
+$sql = "SELECT DISTINCT COUNT(id) FROM users";
+$result = mysqli_query($conn, $sql);
+$gebruiker = mysqli_fetch_array($result);
 ?>
 
 <?php
@@ -52,7 +59,7 @@ require 'header.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td>100</td>
+                        <td><?php echo $aantal_gebruikers[0]; ?></td>
                         <td>5</td>
                         <td>15</td>
                         <td>80</td>
