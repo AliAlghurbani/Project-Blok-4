@@ -1,6 +1,6 @@
 <?php
 
-require 'database.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header($_SERVER["SERVER_PROTOCOL"] . " 405 Method Not Allowed", true, 405);
@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     include '405.php';
     exit;
 }
+
+require 'database.php';
 
 session_start();
 
@@ -136,7 +138,7 @@ if ($rol == "admin") {
 
     $sql = "INSERT INTO users (voornaam, tussenvoegsels, achternaam, geslacht, email, gebruikersnaam, password, regular_id, address_id)
     VALUES ('$voornaam','$tussenvoegsels','$achternaam','$geslacht','$email','$gebruikersnaam','$hash_password','$regular_id', $address_id)";
- 
+
     mysqli_query($conn, $sql);
 
     header("location: user_added.php");

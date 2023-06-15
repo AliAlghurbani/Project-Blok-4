@@ -41,19 +41,19 @@ if (password_verify($password, $user['password'])) {
     $_SESSION['user_id'] = $user['id'];
 
     if (!is_null($user['admin_id'])) {
-
+        $_SESSION['isIngelogd'] = true;
         header("location: admin-dashboard.php");
         exit;
     }
 
     if (!is_null($user['manager_id'])) {
-
-        header("location: manager.php");
+        $_SESSION['isIngelogd'] = true;
+        header("location: manager-dashboard.php");
         exit;
     }
 
     if (!is_null($user['regular_id'])) {
-
+        $_SESSION['isIngelogd'] = true;
         header("location: regular-dashboard.php");
         exit;
     }

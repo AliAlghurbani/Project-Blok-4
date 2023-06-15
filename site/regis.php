@@ -1,3 +1,12 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("location: inloggen.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

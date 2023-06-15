@@ -1,3 +1,20 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("location: inloggen.php");
+    exit;
+}
+
+
+session_start();
+
+if (!isset($_SESSION['isIngelogd'])) {
+    header("location: inloggen.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,18 +35,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title> Locasion </title>
 </head>
-
-<?php
-
-
-session_start();
-
-if (!isset($_SESSION['isIngelogd'])) {
-    header("location: inloggen.php");
-    exit;
-}
-
-?>
 
 <body>
 
@@ -56,9 +61,8 @@ if (!isset($_SESSION['isIngelogd'])) {
     <main class="homepageMain">
 
         <h1> <?php echo "Welcome! " . $_SESSION['voornaam']; ?> </h1>
-        <h1> WHERE AM I?</h1>
         <h2> Find and browse through your addresses</h2>
-        <a href="addresses-overzicht.php.php" class="homepageBtn">
+        <a href="addresses-overzicht.php" class="homepageBtn">
             <div><span class="material-symbols-outlined">map</span></div>
             <div>Show addresses</div>
         </a>
