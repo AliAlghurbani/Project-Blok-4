@@ -30,10 +30,10 @@
             <nav>
                 <ul class="ulnav">
 
-                    <li class="linav"> <a href="#"> Add Adresses </a></li>
-                    <li class="linav"><a href="adressen.php"> Addresses</a></li>
-                    <li class="linav"><a href="#"> Add Users </a></li>
-                    <li class="linav"><a href="#"> Users </a></li>
+                    <li class="linav"> <a href="adressen.php"> Add Adresses </a></li>
+                    <li class="linav"><a href="addresses-overzicht.php"> Addresses</a></li>
+                    <li class="linav"><a href="regis.php"> Add Users </a></li>
+                    <li class="linav"><a href="users-overzicht.php"> Users </a></li>
                 </ul>
             </nav>
 

@@ -39,10 +39,24 @@ if (password_verify($password, $user['password'])) {
     $_SESSION['isIngelogd'] = true;
     $_SESSION['voornaam'] = $user['voornaam'];
     $_SESSION['user_id'] = $user['id'];
-    
 
-    header("location: dashboard.php");
-    exit;
+    if (!is_null($user['admin_id'])) {
+
+        header("location: admin-dashboard.php");
+        exit;
+    }
+
+    if (!is_null($user['manager_id'])) {
+
+        header("location: manager.php");
+        exit;
+    }
+
+    if (!is_null($user['regular_id'])) {
+
+        header("location: regular-dashboard.php");
+        exit;
+    }
 } else {
 
     header("location: inloggen.php");

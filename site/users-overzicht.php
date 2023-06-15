@@ -40,6 +40,30 @@ $gebruiker = mysqli_fetch_array($result);
 <body class="users-overzichtBody">
 
 
+    <div class="shadow">
+        <header>
+
+            <div class="logo">
+                <a href="homepage.php"><img src="images/Logo1-removebg-preview.png" alt="LOGO" class="logoImg"></a>
+            </div>
+            <nav>
+                <ul class="ulnav">
+
+                    <li class="linav"> <a href="adressen.php"> Add Adresses </a></li>
+                    <li class="linav"><a href="addresses-overzicht.php"> Addresses</a></li>
+                    <li class="linav"><a href="regis.php"> Add Users </a></li>
+                    <li class="linav"><a href="users-overzicht.php"> Users </a></li>
+                </ul>
+            </nav>
+
+            <div class="loginHeader">
+                <a href="logout.php" class="signInBtn"> Log out </a>
+            </div>
+
+        </header>
+    </div>
+
+
     <div class="filterandsearch">
         <form action="verwerk-filter-user.php" method="post" class="filter">
             <select id="filter" name="filter" class="dropdownMenu" style="margin-top: 4.5vh;">
